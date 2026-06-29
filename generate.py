@@ -217,17 +217,10 @@ MELODIES = [
         "notes_str": "Do\u2192Mi\u2192Fa# (intro instrumental)",
         "tempo": 160,
         "notes": [
-            # Instrumental intro ascending
-            (N("C4"), 1),     # C
-            (N("E4"), 1),     # E
-            (N("F#4"), 1),    # F# (tritone from C!)
-            (N("A4"), 0.5),   # A
-            (N("G4"), 1.5),   # G (held)
-            (None, 0.5),
-            # Then the vocal hook
-            (N("C5"), 0.5),   # "The"
-            (N("C5"), 1),     # "Simp-"
-            (N("F#4"), 2),    # "-sons!"
+            # Intro: C - F# - G (the tritone is C to F#)
+            (N("C4"), 1.5),   # C
+            (N("F#4"), 1.5),  # F# (tritone!)
+            (N("G4"), 2),     # G
         ],
     },
 
