@@ -4,7 +4,7 @@ Outil d'apprentissage des intervalles musicaux à l'oreille, basé sur les premi
 
 ## Utilisation en ligne
 
-👉 **[Ouvrir la page](https://intervalles.gnodet.fr/)**
+👉 **[Ouvrir la page](https://gnodet.github.io/intervalles-musicaux/)**
 
 ## Générer les fichiers audio
 
