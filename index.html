@@ -186,7 +186,7 @@ const manifest = [
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "Les Dents de la mer (Jaws)",
-    "notes": "E2-F2 (repete, accelerant)",
+    "notes": "E2→F2 (accelerando)",
     "file": "01_asc_Seconde_mineure.mp3"
   },
   {
@@ -195,8 +195,8 @@ const manifest = [
     "semitones": 2,
     "direction": "asc",
     "direction_symbol": "↑",
-    "song": "Frere Jacques",
-    "notes": "C4-D4-E4-C4",
+    "song": "Frère Jacques",
+    "notes": "Do→Ré→Mi→Do",
     "file": "02_asc_Seconde_majeure.mp3"
   },
   {
@@ -206,7 +206,7 @@ const manifest = [
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "Greensleeves",
-    "notes": "A3-C4-D4-E4-F4-E4-D4-B3...",
+    "notes": "La→Do (A3→C4)",
     "file": "03_asc_Tierce_mineure.mp3"
   },
   {
@@ -216,7 +216,7 @@ const manifest = [
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "Oh When the Saints",
-    "notes": "C4-E4-F4-G4",
+    "notes": "Do→Mi→Fa→Sol",
     "file": "04_asc_Tierce_majeure.mp3"
   },
   {
@@ -226,7 +226,7 @@ const manifest = [
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "La Marseillaise",
-    "notes": "G3-G3-G3-C4 (Al-lons en-fants)",
+    "notes": "Do→Do→Do→Fa (Al-lons en-fants)",
     "file": "05_asc_Quarte_juste.mp3"
   },
   {
@@ -235,8 +235,8 @@ const manifest = [
     "semitones": 6,
     "direction": "asc",
     "direction_symbol": "↑",
-    "song": "The Simpsons (theme)",
-    "notes": "C4-E4-F#4-A4-Ab4",
+    "song": "Les Simpson (The Simpsons)",
+    "notes": "Do→Mi→Fa# (intro instrumental)",
     "file": "06_asc_Triton.mp3"
   },
   {
@@ -245,8 +245,8 @@ const manifest = [
     "semitones": 7,
     "direction": "asc",
     "direction_symbol": "↑",
-    "song": "Star Wars (theme principal)",
-    "notes": "G3-G3-G3-C4-G4",
+    "song": "Star Wars (thème principal)",
+    "notes": "Sol→Sol→Sol→Do→Sol",
     "file": "07_asc_Quinte_juste.mp3"
   },
   {
@@ -255,8 +255,8 @@ const manifest = [
     "semitones": 8,
     "direction": "asc",
     "direction_symbol": "↑",
-    "song": "Love Story (theme)",
-    "notes": "E4-C5",
+    "song": "Le Parrain (The Godfather)",
+    "notes": "La→Fa (A3→F4)",
     "file": "08_asc_Sixte_mineure.mp3"
   },
   {
@@ -266,27 +266,27 @@ const manifest = [
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "My Bonnie Lies Over the Ocean",
-    "notes": "G3-E4 (My Bon-nie)",
+    "notes": "Ré→Si (D4→B4) « My Bon- »",
     "file": "09_asc_Sixte_majeure.mp3"
   },
   {
     "id": "10",
-    "interval": "Septieme mineure",
+    "interval": "Septième mineure",
     "semitones": 10,
     "direction": "asc",
     "direction_symbol": "↑",
-    "song": "Star Trek (theme)",
-    "notes": "Bb3-Ab4",
+    "song": "Star Trek (thème)",
+    "notes": "Sib→Lab (Bb3→Ab4)",
     "file": "10_asc_Septieme_mineure.mp3"
   },
   {
     "id": "11",
-    "interval": "Septieme majeure",
+    "interval": "Septième majeure",
     "semitones": 11,
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "Take On Me (a-ha)",
-    "notes": "F#4-F#4-D4-B3-B3-E4...",
+    "notes": "F#5→F#5→D5→B4→E5→G#5→A5→B5",
     "file": "11_asc_Septieme_majeure.mp3"
   },
   {
@@ -296,7 +296,7 @@ const manifest = [
     "direction": "asc",
     "direction_symbol": "↑",
     "song": "Somewhere Over the Rainbow",
-    "notes": "C4-C5 (Some-where)",
+    "notes": "Lab→Lab (Ab3→Ab4) « Some-where »",
     "file": "12_asc_Octave.mp3"
   },
   {
@@ -305,49 +305,119 @@ const manifest = [
     "semitones": 1,
     "direction": "desc",
     "direction_symbol": "↓",
-    "song": "La Lettre a Elise (Fur Elise)",
-    "notes": "E5-D#5-E5-D#5-E5-B4-D5-C5-A4",
+    "song": "La Lettre à Élise (Für Elise)",
+    "notes": "Mi→Ré#→Mi→Ré#→Mi→Si→Ré→Do→La",
     "file": "13_desc_Seconde_mineure.mp3"
   },
   {
     "id": "14",
+    "interval": "Seconde majeure",
+    "semitones": 2,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Yesterday (Beatles)",
+    "notes": "Sol→Fa (G4→F4) « Yes-ter-day »",
+    "file": "14_desc_Seconde_majeure.mp3"
+  },
+  {
+    "id": "15",
     "interval": "Tierce mineure",
     "semitones": 3,
     "direction": "desc",
     "direction_symbol": "↓",
     "song": "Hey Jude (Beatles)",
-    "notes": "A4-F#4 (Hey Jude)",
-    "file": "14_desc_Tierce_mineure.mp3"
+    "notes": "Do→La (C5→A4) « Hey Jude »",
+    "file": "15_desc_Tierce_mineure.mp3"
   },
   {
-    "id": "15",
+    "id": "16",
     "interval": "Tierce majeure",
     "semitones": 4,
     "direction": "desc",
     "direction_symbol": "↓",
-    "song": "Summertime (Gershwin)",
-    "notes": "E5-C#5-B4 (Sum-mer-time)",
-    "file": "15_desc_Tierce_majeure.mp3"
+    "song": "Coucou !",
+    "notes": "Sol→Mi (G4→E4)",
+    "file": "16_desc_Tierce_majeure.mp3"
   },
   {
-    "id": "16",
+    "id": "17",
     "interval": "Quarte juste",
     "semitones": 5,
     "direction": "desc",
     "direction_symbol": "↓",
-    "song": "Une chanson douce (Henri Salvador)",
-    "notes": "G4-G4-E4-D4 (U-ne chan-son)",
-    "file": "16_desc_Quarte_juste.mp3"
+    "song": "Carillon de Westminster (Big Ben)",
+    "notes": "Mi→Si (E4→B3)",
+    "file": "17_desc_Quarte_juste.mp3"
   },
   {
-    "id": "17",
+    "id": "18",
+    "interval": "Triton",
+    "semitones": 6,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Danse Macabre (Saint-Saëns)",
+    "notes": "La→Mib (A5→Eb5)",
+    "file": "18_desc_Triton.mp3"
+  },
+  {
+    "id": "19",
     "interval": "Quinte juste",
     "semitones": 7,
     "direction": "desc",
     "direction_symbol": "↓",
-    "song": "The Flintstones (theme)",
-    "notes": "G4-C4 (Flint-stones!)",
-    "file": "17_desc_Quinte_juste.mp3"
+    "song": "Feelings (Morris Albert)",
+    "notes": "Mi→La (E4→A3) « Feel-ings »",
+    "file": "19_desc_Quinte_juste.mp3"
+  },
+  {
+    "id": "20",
+    "interval": "Sixte mineure",
+    "semitones": 8,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Marche funèbre (Chopin)",
+    "notes": "Sib→Ré (Bb3→D3)",
+    "file": "20_desc_Sixte_mineure.mp3"
+  },
+  {
+    "id": "21",
+    "interval": "Sixte majeure",
+    "semitones": 9,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Nobody Knows the Trouble I've Seen",
+    "notes": "Sol→Sib (G4→Bb3) « No-body »",
+    "file": "21_desc_Sixte_majeure.mp3"
+  },
+  {
+    "id": "22",
+    "interval": "Septième mineure",
+    "semitones": 10,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Watermelon Man (Herbie Hancock)",
+    "notes": "Do→Ré (C5→D4)",
+    "file": "22_desc_Septieme_mineure.mp3"
+  },
+  {
+    "id": "23",
+    "interval": "Septième majeure",
+    "semitones": 11,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "I Love You (Cole Porter)",
+    "notes": "Do→Réb (C5→Db4) « I Love »",
+    "file": "23_desc_Septieme_majeure.mp3"
+  },
+  {
+    "id": "24",
+    "interval": "Octave",
+    "semitones": 12,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Mon Dieu (Édith Piaf)",
+    "notes": "Sib→Sib (Bb4→Bb3) « Mon Dieu »",
+    "file": "24_desc_Octave.mp3"
   }
 ];
 
