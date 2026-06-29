@@ -214,7 +214,7 @@ MELODIES = [
     {
         "id": "06", "interval": "Triton", "semitones": 6,
         "direction": "asc", "song": "Les Simpson (The Simpsons)",
-        "notes_str": "Do\u2192Mi\u2192Fa# (intro instrumental)",
+        "notes_str": "Do→Fa#→Sol (intro)",
         "tempo": 160,
         "notes": [
             # Intro: C - F# - G (the tritone is C to F#)
