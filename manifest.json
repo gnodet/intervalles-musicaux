@@ -1,0 +1,172 @@
+[
+  {
+    "id": "01",
+    "interval": "Seconde mineure",
+    "semitones": 1,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Les Dents de la mer (Jaws)",
+    "notes": "E2-F2 (repete, accelerant)",
+    "file": "01_asc_Seconde_mineure.mp3"
+  },
+  {
+    "id": "02",
+    "interval": "Seconde majeure",
+    "semitones": 2,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Frere Jacques",
+    "notes": "C4-D4-E4-C4",
+    "file": "02_asc_Seconde_majeure.mp3"
+  },
+  {
+    "id": "03",
+    "interval": "Tierce mineure",
+    "semitones": 3,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Greensleeves",
+    "notes": "A3-C4-D4-E4-F4-E4-D4-B3...",
+    "file": "03_asc_Tierce_mineure.mp3"
+  },
+  {
+    "id": "04",
+    "interval": "Tierce majeure",
+    "semitones": 4,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Oh When the Saints",
+    "notes": "C4-E4-F4-G4",
+    "file": "04_asc_Tierce_majeure.mp3"
+  },
+  {
+    "id": "05",
+    "interval": "Quarte juste",
+    "semitones": 5,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "La Marseillaise",
+    "notes": "G3-G3-G3-C4 (Al-lons en-fants)",
+    "file": "05_asc_Quarte_juste.mp3"
+  },
+  {
+    "id": "06",
+    "interval": "Triton",
+    "semitones": 6,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "The Simpsons (theme)",
+    "notes": "C4-E4-F#4-A4-Ab4",
+    "file": "06_asc_Triton.mp3"
+  },
+  {
+    "id": "07",
+    "interval": "Quinte juste",
+    "semitones": 7,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Star Wars (theme principal)",
+    "notes": "G3-G3-G3-C4-G4",
+    "file": "07_asc_Quinte_juste.mp3"
+  },
+  {
+    "id": "08",
+    "interval": "Sixte mineure",
+    "semitones": 8,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Love Story (theme)",
+    "notes": "E4-C5",
+    "file": "08_asc_Sixte_mineure.mp3"
+  },
+  {
+    "id": "09",
+    "interval": "Sixte majeure",
+    "semitones": 9,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "My Bonnie Lies Over the Ocean",
+    "notes": "G3-E4 (My Bon-nie)",
+    "file": "09_asc_Sixte_majeure.mp3"
+  },
+  {
+    "id": "10",
+    "interval": "Septieme mineure",
+    "semitones": 10,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Star Trek (theme)",
+    "notes": "Bb3-Ab4",
+    "file": "10_asc_Septieme_mineure.mp3"
+  },
+  {
+    "id": "11",
+    "interval": "Septieme majeure",
+    "semitones": 11,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Take On Me (a-ha)",
+    "notes": "F#4-F#4-D4-B3-B3-E4...",
+    "file": "11_asc_Septieme_majeure.mp3"
+  },
+  {
+    "id": "12",
+    "interval": "Octave",
+    "semitones": 12,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Somewhere Over the Rainbow",
+    "notes": "C4-C5 (Some-where)",
+    "file": "12_asc_Octave.mp3"
+  },
+  {
+    "id": "13",
+    "interval": "Seconde mineure",
+    "semitones": 1,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "La Lettre a Elise (Fur Elise)",
+    "notes": "E5-D#5-E5-D#5-E5-B4-D5-C5-A4",
+    "file": "13_desc_Seconde_mineure.mp3"
+  },
+  {
+    "id": "14",
+    "interval": "Tierce mineure",
+    "semitones": 3,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Hey Jude (Beatles)",
+    "notes": "A4-F#4 (Hey Jude)",
+    "file": "14_desc_Tierce_mineure.mp3"
+  },
+  {
+    "id": "15",
+    "interval": "Tierce majeure",
+    "semitones": 4,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Summertime (Gershwin)",
+    "notes": "E5-C#5-B4 (Sum-mer-time)",
+    "file": "15_desc_Tierce_majeure.mp3"
+  },
+  {
+    "id": "16",
+    "interval": "Quarte juste",
+    "semitones": 5,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Une chanson douce (Henri Salvador)",
+    "notes": "G4-G4-E4-D4 (U-ne chan-son)",
+    "file": "16_desc_Quarte_juste.mp3"
+  },
+  {
+    "id": "17",
+    "interval": "Quinte juste",
+    "semitones": 7,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "The Flintstones (theme)",
+    "notes": "G4-C4 (Flint-stones!)",
+    "file": "17_desc_Quinte_juste.mp3"
+  }
+]

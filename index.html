@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intervalles Musicaux — Mnémotechniques</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --card: #0f3460;
+    --accent: #e94560;
+    --accent2: #533483;
+    --text: #eee;
+    --text-dim: #aab;
+    --green: #4ecca3;
+    --orange: #f89820;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 0;
+  }
+  header {
+    background: linear-gradient(135deg, var(--surface), var(--accent2));
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+  }
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: .3rem;
+  }
+  header p {
+    color: var(--text-dim);
+    font-size: 1rem;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 .8rem;
+    padding-left: .5rem;
+    border-left: 4px solid var(--accent);
+  }
+  h2.desc { border-left-color: var(--green); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  thead th {
+    background: var(--card);
+    padding: .7rem .6rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--text-dim);
+  }
+  tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    transition: background .15s;
+  }
+  tbody tr:hover { background: rgba(233,69,96,.08); }
+  td {
+    padding: .6rem;
+    vertical-align: middle;
+    font-size: .95rem;
+  }
+  .interval-name {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .semitones {
+    display: inline-block;
+    background: var(--accent2);
+    color: #fff;
+    border-radius: 10px;
+    padding: .1rem .5rem;
+    font-size: .75rem;
+    font-weight: 700;
+    min-width: 1.5rem;
+    text-align: center;
+  }
+  .song-name { font-style: italic; color: var(--orange); }
+  .notes-col { font-family: 'Fira Code', 'Consolas', monospace; font-size: .85rem; color: var(--text-dim); }
+  /* Audio player */
+  .play-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all .2s;
+  }
+  .play-btn:hover { background: var(--accent); color: #fff; }
+  .play-btn.playing { background: var(--accent); color: #fff; animation: pulse .8s infinite; }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(233,69,96,.4); }
+    50% { box-shadow: 0 0 0 8px rgba(233,69,96,0); }
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-dim);
+    font-size: .8rem;
+  }
+  footer a { color: var(--green); }
+  /* Responsive */
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.4rem; }
+    td, th { padding: .4rem .3rem; font-size: .82rem; }
+    .notes-col { display: none; }
+    .play-btn { width: 32px; height: 32px; font-size: .9rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎵 Intervalles Musicaux</h1>
+  <p>Mnémotechniques : reconnaître chaque intervalle grâce à une mélodie connue</p>
+</header>
+
+<div class="container">
+
+<h2>⬆️ Intervalles ascendants</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Intervalle</th>
+      <th></th>
+      <th>Chanson de référence</th>
+      <th class="notes-col">Notes</th>
+      <th>🔊</th>
+    </tr>
+  </thead>
+  <tbody id="asc-body"></tbody>
+</table>
+
+<h2 class="desc">⬇️ Intervalles descendants</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Intervalle</th>
+      <th></th>
+      <th>Chanson de référence</th>
+      <th class="notes-col">Notes</th>
+      <th>🔊</th>
+    </tr>
+  </thead>
+  <tbody id="desc-body"></tbody>
+</table>
+
+</div>
+
+<footer>
+  <p>
+    Généré avec <code>generate.py</code> — synthèse sinusoïdale + numpy + ffmpeg<br>
+    <a href="generate.py">📜 Voir le script</a>
+  </p>
+</footer>
+
+<script>
+const manifest = [
+  {
+    "id": "01",
+    "interval": "Seconde mineure",
+    "semitones": 1,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Les Dents de la mer (Jaws)",
+    "notes": "E2-F2 (repete, accelerant)",
+    "file": "01_asc_Seconde_mineure.mp3"
+  },
+  {
+    "id": "02",
+    "interval": "Seconde majeure",
+    "semitones": 2,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Frere Jacques",
+    "notes": "C4-D4-E4-C4",
+    "file": "02_asc_Seconde_majeure.mp3"
+  },
+  {
+    "id": "03",
+    "interval": "Tierce mineure",
+    "semitones": 3,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Greensleeves",
+    "notes": "A3-C4-D4-E4-F4-E4-D4-B3...",
+    "file": "03_asc_Tierce_mineure.mp3"
+  },
+  {
+    "id": "04",
+    "interval": "Tierce majeure",
+    "semitones": 4,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Oh When the Saints",
+    "notes": "C4-E4-F4-G4",
+    "file": "04_asc_Tierce_majeure.mp3"
+  },
+  {
+    "id": "05",
+    "interval": "Quarte juste",
+    "semitones": 5,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "La Marseillaise",
+    "notes": "G3-G3-G3-C4 (Al-lons en-fants)",
+    "file": "05_asc_Quarte_juste.mp3"
+  },
+  {
+    "id": "06",
+    "interval": "Triton",
+    "semitones": 6,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "The Simpsons (theme)",
+    "notes": "C4-E4-F#4-A4-Ab4",
+    "file": "06_asc_Triton.mp3"
+  },
+  {
+    "id": "07",
+    "interval": "Quinte juste",
+    "semitones": 7,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Star Wars (theme principal)",
+    "notes": "G3-G3-G3-C4-G4",
+    "file": "07_asc_Quinte_juste.mp3"
+  },
+  {
+    "id": "08",
+    "interval": "Sixte mineure",
+    "semitones": 8,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Love Story (theme)",
+    "notes": "E4-C5",
+    "file": "08_asc_Sixte_mineure.mp3"
+  },
+  {
+    "id": "09",
+    "interval": "Sixte majeure",
+    "semitones": 9,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "My Bonnie Lies Over the Ocean",
+    "notes": "G3-E4 (My Bon-nie)",
+    "file": "09_asc_Sixte_majeure.mp3"
+  },
+  {
+    "id": "10",
+    "interval": "Septieme mineure",
+    "semitones": 10,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Star Trek (theme)",
+    "notes": "Bb3-Ab4",
+    "file": "10_asc_Septieme_mineure.mp3"
+  },
+  {
+    "id": "11",
+    "interval": "Septieme majeure",
+    "semitones": 11,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Take On Me (a-ha)",
+    "notes": "F#4-F#4-D4-B3-B3-E4...",
+    "file": "11_asc_Septieme_majeure.mp3"
+  },
+  {
+    "id": "12",
+    "interval": "Octave",
+    "semitones": 12,
+    "direction": "asc",
+    "direction_symbol": "↑",
+    "song": "Somewhere Over the Rainbow",
+    "notes": "C4-C5 (Some-where)",
+    "file": "12_asc_Octave.mp3"
+  },
+  {
+    "id": "13",
+    "interval": "Seconde mineure",
+    "semitones": 1,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "La Lettre a Elise (Fur Elise)",
+    "notes": "E5-D#5-E5-D#5-E5-B4-D5-C5-A4",
+    "file": "13_desc_Seconde_mineure.mp3"
+  },
+  {
+    "id": "14",
+    "interval": "Tierce mineure",
+    "semitones": 3,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Hey Jude (Beatles)",
+    "notes": "A4-F#4 (Hey Jude)",
+    "file": "14_desc_Tierce_mineure.mp3"
+  },
+  {
+    "id": "15",
+    "interval": "Tierce majeure",
+    "semitones": 4,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Summertime (Gershwin)",
+    "notes": "E5-C#5-B4 (Sum-mer-time)",
+    "file": "15_desc_Tierce_majeure.mp3"
+  },
+  {
+    "id": "16",
+    "interval": "Quarte juste",
+    "semitones": 5,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "Une chanson douce (Henri Salvador)",
+    "notes": "G4-G4-E4-D4 (U-ne chan-son)",
+    "file": "16_desc_Quarte_juste.mp3"
+  },
+  {
+    "id": "17",
+    "interval": "Quinte juste",
+    "semitones": 7,
+    "direction": "desc",
+    "direction_symbol": "↓",
+    "song": "The Flintstones (theme)",
+    "notes": "G4-C4 (Flint-stones!)",
+    "file": "17_desc_Quinte_juste.mp3"
+  }
+];
+
+let currentAudio = null;
+let currentBtn = null;
+
+function stopCurrent() {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    if (currentBtn) currentBtn.classList.remove('playing');
+    currentAudio = null;
+    currentBtn = null;
+  }
+}
+
+function play(file, btn) {
+  if (currentBtn === btn && currentAudio && !currentAudio.paused) {
+    stopCurrent();
+    return;
+  }
+  stopCurrent();
+  const audio = new Audio('audio/' + file);
+  audio.play();
+  btn.classList.add('playing');
+  currentAudio = audio;
+  currentBtn = btn;
+  audio.addEventListener('ended', () => {
+    btn.classList.remove('playing');
+    currentAudio = null;
+    currentBtn = null;
+  });
+}
+
+function buildRow(item) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td class="interval-name">${item.interval}</td>
+    <td><span class="semitones">${item.semitones}</span></td>
+    <td class="song-name">${item.song}</td>
+    <td class="notes-col">${item.notes}</td>
+    <td><button class="play-btn" onclick="play('${item.file}', this)">▶</button></td>
+  `;
+  return tr;
+}
+
+const ascBody = document.getElementById('asc-body');
+const descBody = document.getElementById('desc-body');
+
+manifest.forEach(item => {
+  if (item.direction === 'asc') {
+    ascBody.appendChild(buildRow(item));
+  } else {
+    descBody.appendChild(buildRow(item));
+  }
+});
+</script>
+
+</body>
+</html>
