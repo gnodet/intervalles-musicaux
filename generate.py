@@ -190,17 +190,16 @@ MELODIES = [
         "notes_str": "Do\u2192Do\u2192Do\u2192Fa (Al-lons en-fants)",
         "tempo": 100,
         "notes": [
-            # Al-lons en-FANTS | de la pa-TRI- | -i-e
-            (N("C4"), 1),     # Al-
-            (N("C4"), 1),     # -lons
-            (N("C4"), 2),     # en- (held)
-            (N("F4"), 2),     # -fants (the 4th!)
-            (N("F4"), 2),     # de
-            (N("A4"), 1),     # la
-            (N("A4"), 1),     # pa-
-            (N("G4"), 1.5),   # -tri-
-            (N("F4"), 0.5),   # -i-
-            (N("F4"), 2),     # -e
+            # Al-lons en-FANTS de la pa-TRI-e (en sol majeur)
+            # re(16) re(8.) re(16) sol(4) sol(4) la(4) la(4) re'(2)
+            (N("D4"), 0.25),   # Al-    (double croche)
+            (N("D4"), 0.75),   # -lons  (croche pointee)
+            (N("D4"), 0.25),   # en-    (double croche)
+            (N("G4"), 1),      # -FANTS (noire, quarte juste!)
+            (N("G4"), 1),      # de     (noire)
+            (N("A4"), 1),      # la     (noire)
+            (N("A4"), 1),      # pa-    (noire)
+            (N("D5"), 2),      # -TRI-e (blanche)
         ],
     },
 
